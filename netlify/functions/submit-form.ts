@@ -1,6 +1,6 @@
-import type { Handler } from '@netlify/functions';
+import type { Handler, APIGatewayEvent } from '@netlify/functions';
 
-const handler: Handler = async (event) => {
+const handler: Handler = async (event: APIGatewayEvent) => {
   const { name, email, message } = JSON.parse(event.body || '{}');
 
   try {
